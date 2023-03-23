@@ -1,5 +1,6 @@
-var ball = document.getElementById("ball");
-var body = document.getElementById("body");
+let ball = document.getElementById("ball");
+let body = document.getElementById("body");
+let clickcount = 0;
 
 ball.addEventListener("click", function() {
     const r = Math.floor(Math.random() * 256);
@@ -13,4 +14,17 @@ ball.addEventListener("click", function() {
     body.style.backgroundColor = `rgb(${j}, ${k}, ${l})`;
 
     this.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+    
 });
+
+ball.addEventListener("click", handleClick);
+
+function handleClick(){
+        clickcount++;
+    
+        if(clickcount === 10){
+            alert("Heyy calm down");
+            clickcount = 0;
+        }
+    }
